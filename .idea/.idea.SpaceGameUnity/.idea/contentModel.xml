@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\bewreks\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_SpaceGameUnity.-1874727643.00" t="ExcludeRecursive" />
+    <e p="E:\Work\Unity\SpaceGameUnity" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="AsteroidMover.cs" t="Include" />
+          <e p="AsteroidRotater.cs" t="Include" />
+          <e p="Bullet.cs" t="Include" />
+          <e p="PlayerMover.cs" t="Include" />
+          <e p="Pool.cs" t="Include" />
+          <e p="Shooter.cs" t="Include" />
+        </e>
+        <e p="Shaders" t="Include">
+          <e p="background.shader" t="Include" />
+        </e>
+      </e>
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="SpaceGameUnity.sln" t="IncludeFlat" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+    </e>
+  </component>
+</project>
