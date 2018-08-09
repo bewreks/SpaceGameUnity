@@ -133,6 +133,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lifeTime: 10
+  _damage: 10
+  _hp: 30
+  _score: 100
 --- !u!114 &114707463870054700
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -257,7 +257,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -559,7 +559,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f37ccf247eed884ba0a8e3ebbb93089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pauseUI: {fileID: 0}
+  _pauseUI: {fileID: 263038157}
+  _gameUI: {fileID: 1005225672}
 --- !u!1 &473970167
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,7 +608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -917,11 +918,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 60898132731729178, guid: 35ce2730ca00b5a4c9154de3bb4688eb,
-        type: 2}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4860372886708454, guid: 35ce2730ca00b5a4c9154de3bb4688eb, type: 2}
       propertyPath: m_LocalPosition.x
       value: 2.5
@@ -953,80 +949,6 @@ Prefab:
     - target: {fileID: 4860372886708454, guid: 35ce2730ca00b5a4c9154de3bb4688eb, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114747243395897194, guid: 35ce2730ca00b5a4c9154de3bb4688eb,
-        type: 2}
-      propertyPath: _shootRate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 60898132731729178, guid: 35ce2730ca00b5a4c9154de3bb4688eb,
-        type: 2}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
-      value: -0.0038621426
-      objectReference: {fileID: 0}
-    - target: {fileID: 60898132731729178, guid: 35ce2730ca00b5a4c9154de3bb4688eb,
-        type: 2}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
-      value: 0.15415278
-      objectReference: {fileID: 0}
-    - target: {fileID: 60898132731729178, guid: 35ce2730ca00b5a4c9154de3bb4688eb,
-        type: 2}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
-      value: -2.2937284
-      objectReference: {fileID: 0}
-    - target: {fileID: 60898132731729178, guid: 35ce2730ca00b5a4c9154de3bb4688eb,
-        type: 2}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
-      value: 0.9276758
-      objectReference: {fileID: 0}
-    - target: {fileID: 60898132731729178, guid: 35ce2730ca00b5a4c9154de3bb4688eb,
-        type: 2}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
-      value: -0.0029189587
-      objectReference: {fileID: 0}
-    - target: {fileID: 60898132731729178, guid: 35ce2730ca00b5a4c9154de3bb4688eb,
-        type: 2}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
-      value: -0.15145557
-      objectReference: {fileID: 0}
-    - target: {fileID: 60898132731729178, guid: 35ce2730ca00b5a4c9154de3bb4688eb,
-        type: 2}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
-      value: -2.3002787
-      objectReference: {fileID: 0}
-    - target: {fileID: 60898132731729178, guid: 35ce2730ca00b5a4c9154de3bb4688eb,
-        type: 2}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
-      value: -0.9352242
-      objectReference: {fileID: 0}
-    - target: {fileID: 60898132731729178, guid: 35ce2730ca00b5a4c9154de3bb4688eb,
-        type: 2}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].x
-      value: -2.000144
-      objectReference: {fileID: 0}
-    - target: {fileID: 60898132731729178, guid: 35ce2730ca00b5a4c9154de3bb4688eb,
-        type: 2}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].y
-      value: 0.04637137
-      objectReference: {fileID: 0}
-    - target: {fileID: 1270640893326988, guid: 35ce2730ca00b5a4c9154de3bb4688eb, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212941069222226908, guid: 35ce2730ca00b5a4c9154de3bb4688eb,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: 267018155
-      objectReference: {fileID: 0}
-    - target: {fileID: 212941069222226908, guid: 35ce2730ca00b5a4c9154de3bb4688eb,
-        type: 2}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114325101802761650, guid: 35ce2730ca00b5a4c9154de3bb4688eb,
-        type: 2}
-      propertyPath: _sensivity
-      value: 0.019
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35ce2730ca00b5a4c9154de3bb4688eb, type: 2}
@@ -1169,7 +1091,7 @@ GameObject:
   - component: {fileID: 1005225671}
   - component: {fileID: 1005225670}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: GameCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1308,7 +1230,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}

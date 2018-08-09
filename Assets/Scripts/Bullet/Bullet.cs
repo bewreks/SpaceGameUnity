@@ -6,6 +6,9 @@ public class Bullet : MonoBehaviour
 {
 	[SerializeField] private float _speed = 30;
 	[SerializeField] private float _lifeTime = 2;
+	[SerializeField] private float _damage;
+
+	public float Damage => _damage;
 
 	private void OnEnable()
 	{
@@ -25,5 +28,10 @@ public class Bullet : MonoBehaviour
 	private void OnDisable()
 	{
 		CancelInvoke("Remove");
+	}
+
+	public void Hit()
+	{
+		Remove();
 	}
 }

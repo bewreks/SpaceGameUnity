@@ -146,10 +146,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.14209057, y: 0.005773291}
-      - {x: -0.14456166, y: 0.0075404793}
-      - {x: -0.9487472, y: 2.2975438}
-      - {x: 0.94964033, y: 2.3028648}
+    - - {x: -2.2937284, y: 0.9276758}
+      - {x: -0.0038621426, y: 0.15415278}
+      - {x: -0.0029189587, y: -0.15145557}
+      - {x: -2.3002787, y: -0.9352242}
 --- !u!114 &114325101802761650
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -179,9 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3219f28a81ade96488bcc08e888aee8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletPrefab: {fileID: 1424630037644186, guid: ff617e1e00e16cf428474a1a8a35ff6e,
-    type: 2}
-  _shootRate: 100
+  _shootRate: 1
 --- !u!212 &212941069222226908
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -214,8 +212,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 267018155
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300004, guid: 7c5d2e69d6ea7324885ff310f92dd0f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

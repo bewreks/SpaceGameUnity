@@ -52,6 +52,7 @@ public class Pauser : MonoBehaviour
 
 	public void Pause()
 	{
+		Cursor.visible = true;
 		_pauseUI.enabled = true;
 		_gameUI.enabled = false;
 		_paused = true;
@@ -60,6 +61,7 @@ public class Pauser : MonoBehaviour
 
 	public void Resume()
 	{
+		Cursor.visible = false;
 		_pauseUI.enabled = false;
 		_gameUI.enabled = true;
 		_paused = false;

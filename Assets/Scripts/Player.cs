@@ -39,4 +39,10 @@ public class Player : MonoBehaviour
 			_score = 0;
 		}
 	}
+
+	private void Start()
+	{
+		GameEvents.current.HP_CHANGE += i => Hp += i;
+		GameEvents.current.SCORE_CHANGE += i => Score += i;
+	}
 }
