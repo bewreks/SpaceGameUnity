@@ -53,6 +53,10 @@ public class GameShipMover : MonoBehaviour
         position.x = Mathf.Clamp(position.x, _screenBounds.min.x, _screenBounds.max.x);
         position.y = Mathf.Clamp(position.y, _screenBounds.min.y, _screenBounds.max.y);
         position.z = 0;
-        transform.position = position;
+        
+        if (!Pauser.current.Paused)
+        {
+            transform.position = position;
+        }
     }
 }

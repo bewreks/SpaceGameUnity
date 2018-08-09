@@ -58,10 +58,11 @@
     <Compile Include="Assets\Scripts\Asteroid\AsteroidMover.cs" />
     <Compile Include="Assets\Scripts\Asteroid\AsteroidRotater.cs" />
     <Compile Include="Assets\Scripts\Bullet\Bullet.cs" />
+    <Compile Include="Assets\Scripts\DemoGameScript.cs" />
     <Compile Include="Assets\Scripts\GameEvents.cs" />
-    <Compile Include="Assets\Scripts\GameScript.cs" />
     <Compile Include="Assets\Scripts\GameShip\GameShipMover.cs" />
     <Compile Include="Assets\Scripts\GameShip\Shooter.cs" />
+    <Compile Include="Assets\Scripts\Pauser.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Pools\AsteroidPool.cs" />
     <Compile Include="Assets\Scripts\Pools\BulletPool.cs" />

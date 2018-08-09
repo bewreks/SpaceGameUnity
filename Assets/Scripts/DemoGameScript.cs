@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameScript : MonoBehaviour {
+public class DemoGameScript : MonoBehaviour {
 
 	[SerializeField][Range(0.001f, 200)] private float _asteriodRate = 1;
 	
@@ -38,13 +38,5 @@ public class GameScript : MonoBehaviour {
 	public void Stop()
 	{
 		StopCoroutine(ThrowObject());
-	}
-
-	private void Update()
-	{
-		if (Input.GetButton("Cancel"))
-		{
-			Application.Quit();
-		}
 	}
 }
