@@ -6,12 +6,30 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
-          <e p="AsteroidMover.cs" t="Include" />
-          <e p="AsteroidRotater.cs" t="Include" />
-          <e p="Bullet.cs" t="Include" />
-          <e p="PlayerMover.cs" t="Include" />
-          <e p="Pool.cs" t="Include" />
-          <e p="Shooter.cs" t="Include" />
+          <e p="Asteroid" t="Include">
+            <e p="Asteroid.cs" t="Include" />
+            <e p="AsteroidMover.cs" t="Include" />
+            <e p="AsteroidRotater.cs" t="Include" />
+          </e>
+          <e p="Bullet" t="Include">
+            <e p="Bullet.cs" t="Include" />
+          </e>
+          <e p="GameEvents.cs" t="Include" />
+          <e p="GameScript.cs" t="Include" />
+          <e p="GameShip" t="Include">
+            <e p="GameShipMover.cs" t="Include" />
+            <e p="Shooter.cs" t="Include" />
+          </e>
+          <e p="Player.cs" t="Include" />
+          <e p="Pools" t="Include">
+            <e p="AsteroidPool.cs" t="Include" />
+            <e p="BulletPool.cs" t="Include" />
+            <e p="Pool.cs" t="Include" />
+          </e>
+          <e p="UI" t="Include">
+            <e p="HpUI.cs" t="Include" />
+            <e p="ScoreUI.cs" t="Include" />
+          </e>
         </e>
         <e p="Shaders" t="Include">
           <e p="background.shader" t="Include" />

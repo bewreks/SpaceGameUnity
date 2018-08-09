@@ -9,14 +9,23 @@ public class Shooter : MonoBehaviour
 
 	private void Start()
 	{
+		GameEvents.current.SCORE_CHANGED += ScoreChanged;
 		StartCoroutine(Shoot());
+	}
+
+	private void ScoreChanged(int score)
+	{
+		if (score % 500 == 0)
+		{
+			_shootRate++;
+		}
 	}
 
 	private IEnumerator Shoot()
 	{
 		var transformPosition = transform.position;
 		transformPosition.z = 1;
-		var bullet = Pool.current.GetObject();
+		var bullet = BulletPool.current.GetObject();
 		bullet.transform.position = transformPosition;
 		bullet.transform.rotation = transform.rotation;
 		bullet.SetActive(true);

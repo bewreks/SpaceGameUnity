@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
 		transform.Translate(_speed * Time.fixedDeltaTime, 0, 0);
 	}
 
-	private void Remove()
+	public void Remove()
 	{
 		gameObject.SetActive(false);
 	}

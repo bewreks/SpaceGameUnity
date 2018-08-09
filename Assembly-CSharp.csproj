@@ -54,12 +54,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\AsteroidMover.cs" />
-    <Compile Include="Assets\Scripts\AsteroidRotater.cs" />
-    <Compile Include="Assets\Scripts\Bullet.cs" />
-    <Compile Include="Assets\Scripts\PlayerMover.cs" />
-    <Compile Include="Assets\Scripts\Pool.cs" />
-    <Compile Include="Assets\Scripts\Shooter.cs" />
+    <Compile Include="Assets\Scripts\Asteroid\Asteroid.cs" />
+    <Compile Include="Assets\Scripts\Asteroid\AsteroidMover.cs" />
+    <Compile Include="Assets\Scripts\Asteroid\AsteroidRotater.cs" />
+    <Compile Include="Assets\Scripts\Bullet\Bullet.cs" />
+    <Compile Include="Assets\Scripts\GameEvents.cs" />
+    <Compile Include="Assets\Scripts\GameScript.cs" />
+    <Compile Include="Assets\Scripts\GameShip\GameShipMover.cs" />
+    <Compile Include="Assets\Scripts\GameShip\Shooter.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Pools\AsteroidPool.cs" />
+    <Compile Include="Assets\Scripts\Pools\BulletPool.cs" />
+    <Compile Include="Assets\Scripts\Pools\Pool.cs" />
+    <Compile Include="Assets\Scripts\UI\HpUI.cs" />
+    <Compile Include="Assets\Scripts\UI\ScoreUI.cs" />
     <None Include="Assets\Shaders\background.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>E:/Work/Unity/SpaceGameUnity/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
