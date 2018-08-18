@@ -55,21 +55,43 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Asteroid\Asteroid.cs" />
-    <Compile Include="Assets\Scripts\Asteroid\AsteroidMover.cs" />
     <Compile Include="Assets\Scripts\Asteroid\AsteroidRotater.cs" />
     <Compile Include="Assets\Scripts\Bullet\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Data\Controllers\ElementController.cs" />
+    <Compile Include="Assets\Scripts\Data\Controllers\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Data\Controllers\UpdateController.cs" />
+    <Compile Include="Assets\Scripts\Data\GameDataController.cs" />
+    <Compile Include="Assets\Scripts\Data\Managers\ElementManager.cs" />
+    <Compile Include="Assets\Scripts\Data\Managers\UpdateManager.cs" />
+    <Compile Include="Assets\Scripts\Data\Models\BoughtModel.cs" />
+    <Compile Include="Assets\Scripts\Data\Models\ElementModel.cs" />
+    <Compile Include="Assets\Scripts\Data\Models\PlayerModel.cs" />
+    <Compile Include="Assets\Scripts\Data\Models\UpdateModel.cs" />
     <Compile Include="Assets\Scripts\DemoGameScript.cs" />
     <Compile Include="Assets\Scripts\GameEvents.cs" />
+    <Compile Include="Assets\Scripts\GameObjectMover.cs" />
+    <Compile Include="Assets\Scripts\GameShip\GameShip.cs" />
     <Compile Include="Assets\Scripts\GameShip\GameShipMover.cs" />
     <Compile Include="Assets\Scripts\GameShip\Shooter.cs" />
+    <Compile Include="Assets\Scripts\MedKit.cs" />
     <Compile Include="Assets\Scripts\Pauser.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\Pools\AsteroidPool.cs" />
     <Compile Include="Assets\Scripts\Pools\BulletPool.cs" />
+    <Compile Include="Assets\Scripts\Pools\MedKitPool.cs" />
     <Compile Include="Assets\Scripts\Pools\Pool.cs" />
-    <Compile Include="Assets\Scripts\UI\HpUI.cs" />
-    <Compile Include="Assets\Scripts\UI\ScoreUI.cs" />
+    <Compile Include="Assets\Scripts\Pools\UpdateItemPool.cs" />
+    <Compile Include="Assets\Scripts\Shop\Shop.cs" />
+    <Compile Include="Assets\Scripts\UI\Game\HpUI.cs" />
+    <Compile Include="Assets\Scripts\UI\Game\ScoreUI.cs" />
+    <Compile Include="Assets\Scripts\UI\MainMenu\DescriptionUI.cs" />
+    <Compile Include="Assets\Scripts\UI\MainMenu\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\UI\MainMenu\UpdateUI.cs" />
+    <None Include="Assets\XML\bought.xml" />
+    <None Include="Assets\XML\player.xml" />
+    <None Include="Assets\XML\elements.xml" />
     <None Include="Assets\Shaders\background.shader" />
+    <None Include="Assets\XML\updates.xml" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>E:/Work/Unity/SpaceGameUnity/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

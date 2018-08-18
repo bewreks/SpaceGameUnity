@@ -24,13 +24,22 @@ public class DemoGameScript : MonoBehaviour {
 	private IEnumerator ThrowObject()
 	{
 		var transformPosition = new Vector3(25, Random.Range(-5.0f, 5.0f), 1);
-		var asteroid = AsteroidPool.current.GetObject();
-		asteroid.transform.position = transformPosition;
-		asteroid.transform.rotation = transform.rotation;
-		var scale = Random.Range(0.3f, 1);
-		asteroid.transform.localScale = Vector3.one * scale;
-		asteroid.GetComponent<AsteroidMover>().Speed = Random.Range(-6, -3);
-		asteroid.SetActive(true);
+		var isMedic = Random.Range(0, 4) % 4 == 0;
+		GameObject obj;
+		if (isMedic)
+		{
+			obj = MedKitPool.current.GetObject();
+		}
+		else
+		{
+			obj = AsteroidPool.current.GetObject();
+			var scale = Random.Range(0.3f, 1);
+			obj.transform.localScale = Vector3.one * scale;
+			obj.GetComponent<GameObjectMover>().Speed = Random.Range(-6, -3);
+		}
+		obj.transform.position = transformPosition;
+		obj.transform.rotation = transform.rotation;
+		obj.SetActive(true);
 		yield return new WaitForSeconds(1 / _asteriodRate);
 		StartCoroutine(ThrowObject());
 	}

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<PlayerModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <id>1</id>
+  <name>Test</name>
+  <money>100000</money>
+</PlayerModel>

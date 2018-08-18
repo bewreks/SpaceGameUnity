@@ -8,32 +8,70 @@
         <e p="Scripts" t="Include">
           <e p="Asteroid" t="Include">
             <e p="Asteroid.cs" t="Include" />
-            <e p="AsteroidMover.cs" t="Include" />
             <e p="AsteroidRotater.cs" t="Include" />
           </e>
           <e p="Bullet" t="Include">
             <e p="Bullet.cs" t="Include" />
           </e>
+          <e p="Data" t="Include">
+            <e p="Controllers" t="Include">
+              <e p="ElementController.cs" t="Include" />
+              <e p="PlayerController.cs" t="Include" />
+              <e p="UpdateController.cs" t="Include" />
+            </e>
+            <e p="GameDataController.cs" t="Include" />
+            <e p="Managers" t="Include">
+              <e p="ElementManager.cs" t="Include" />
+              <e p="UpdateManager.cs" t="Include" />
+            </e>
+            <e p="Models" t="Include">
+              <e p="BoughtModel.cs" t="Include" />
+              <e p="ElementModel.cs" t="Include" />
+              <e p="PlayerModel.cs" t="Include" />
+              <e p="UpdateModel.cs" t="Include" />
+            </e>
+          </e>
           <e p="DemoGameScript.cs" t="Include" />
           <e p="GameEvents.cs" t="Include" />
+          <e p="GameObjectMover.cs" t="Include" />
           <e p="GameShip" t="Include">
+            <e p="GameShip.cs" t="Include" />
             <e p="GameShipMover.cs" t="Include" />
             <e p="Shooter.cs" t="Include" />
           </e>
+          <e p="MedKit.cs" t="Include" />
           <e p="Pauser.cs" t="Include" />
-          <e p="Player.cs" t="Include" />
+          <e p="PlayerManager.cs" t="Include" />
           <e p="Pools" t="Include">
             <e p="AsteroidPool.cs" t="Include" />
             <e p="BulletPool.cs" t="Include" />
+            <e p="MedKitPool.cs" t="Include" />
             <e p="Pool.cs" t="Include" />
+            <e p="UpdateItemPool.cs" t="Include" />
+          </e>
+          <e p="Shop" t="Include">
+            <e p="Shop.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
-            <e p="HpUI.cs" t="Include" />
-            <e p="ScoreUI.cs" t="Include" />
+            <e p="Game" t="Include">
+              <e p="HpUI.cs" t="Include" />
+              <e p="ScoreUI.cs" t="Include" />
+            </e>
+            <e p="MainMenu" t="Include">
+              <e p="DescriptionUI.cs" t="Include" />
+              <e p="MainMenu.cs" t="Include" />
+              <e p="UpdateUI.cs" t="Include" />
+            </e>
           </e>
         </e>
         <e p="Shaders" t="Include">
           <e p="background.shader" t="Include" />
+        </e>
+        <e p="XML" t="Include">
+          <e p="bought.xml" t="Include" />
+          <e p="elements.xml" t="Include" />
+          <e p="player.xml" t="Include" />
+          <e p="updates.xml" t="Include" />
         </e>
       </e>
       <e p="Library" t="ExcludeRecursive" />

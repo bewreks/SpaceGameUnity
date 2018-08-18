@@ -24,7 +24,7 @@ public class Shooter : MonoBehaviour
 	private IEnumerator Shoot()
 	{
 		var transformPosition = transform.position;
-		transformPosition.z = 1;
+		transformPosition.z = -0.5f;
 		var bullet = BulletPool.current.GetObject();
 		bullet.transform.position = transformPosition;
 		bullet.transform.rotation = transform.rotation;

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<ArrayOfElementModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ElementModel>
+    <id>2</id>
+    <name>Пушка 1</name>
+    <description>Переднее орудие</description>
+    <updates>
+      <int>8</int>
+    </updates>
+  </ElementModel>
+  <ElementModel>
+    <id>3</id>
+    <name>Пушка 2</name>
+    <description>Среднее орудие</description>
+    <updates>
+      <int>8</int>
+    </updates>
+  </ElementModel>
+  <ElementModel>
+    <id>4</id>
+    <name>Пушка 3</name>
+    <description>Среднее орудие</description>
+    <updates>
+      <int>8</int>
+    </updates>
+  </ElementModel>
+  <ElementModel>
+    <id>5</id>
+    <name>Пушка 4</name>
+    <description>Заднее орудие</description>
+    <updates>
+      <int>8</int>
+    </updates>
+  </ElementModel>
+  <ElementModel>
+    <id>6</id>
+    <name>Пушка 5</name>
+    <description>Заднее орудие</description>
+    <updates>
+      <int>8</int>
+    </updates>
+  </ElementModel>
+  <ElementModel>
+    <id>7</id>
+    <name>Щит</name>
+    <description>Энергетический щит</description>
+    <updates>
+      <int>16</int>
+    </updates>
+  </ElementModel>
+</ArrayOfElementModel>

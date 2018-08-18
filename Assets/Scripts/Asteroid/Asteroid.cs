@@ -11,6 +11,7 @@ public class Asteroid : MonoBehaviour {
 	[SerializeField] private int _damage;
 	[SerializeField] private int _hp;
 	[SerializeField] private int _score;
+	[SerializeField] private GameObject _explosion;
 
 	private AsteroidData _data;
 
@@ -45,6 +46,7 @@ public class Asteroid : MonoBehaviour {
 	private void Remove()
 	{
 		gameObject.SetActive(false);
+		Instantiate(_explosion, transform.position, transform.rotation);
 	}
 
 	private void OnDisable()

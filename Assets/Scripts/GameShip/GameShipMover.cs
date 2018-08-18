@@ -6,6 +6,7 @@ public class GameShipMover : MonoBehaviour
 {
     [SerializeField] private Vector2 _speed = new Vector2(10, 10);
     [SerializeField] private Rect _bounds = new Rect(0, 0, .6f, .6f);
+    [SerializeField] private ParticleSystem _flame;
     private Rect _screenBounds;
 
     private Camera _camera;
@@ -46,6 +47,7 @@ public class GameShipMover : MonoBehaviour
         #region Axis Position
             var h = Input.GetAxis("Horizontal");
             var v = Input.GetAxis("Vertical");
+//            _flame.shape.angle = Mathf.Clamp(h, 0, 60);
             var axisDelta = new Vector3(h * _speed.x * Time.deltaTime, v * _speed.y * Time.deltaTime);
         #endregion
         
