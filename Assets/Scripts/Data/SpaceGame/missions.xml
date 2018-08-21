@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<ArrayOfMissionModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <MissionModel>
+    <id>1</id>
+    <price>0</price>
+    <name>Демо</name>
+    <description>Демонстнационная миссия</description>
+    <missionclass>DemoMission</missionclass>
+  </MissionModel>
+</ArrayOfMissionModel>

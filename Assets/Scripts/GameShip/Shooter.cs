@@ -6,23 +6,20 @@ using UnityEngine;
 public class Shooter : MonoBehaviour
 {
 	[SerializeField][Range(0.001f, 200)] private float _shootRate;
+	[SerializeField] private PartTypes _type;
 
 	private void Start()
 	{
-		GameEvents.current.SCORE_CHANGED += ScoreChanged;
-		StartCoroutine(Shoot());
-	}
-
-	private void ScoreChanged(int score)
-	{
-		if (score % 500 == 0)
+		_shootRate = PlayerController.Instance.GetPart(_type).Power;
+		if (_shootRate != 0)
 		{
-			_shootRate++;
+			StartCoroutine(Shoot());
 		}
 	}
 
 	private IEnumerator Shoot()
 	{
+		_shootRate = PlayerController.Instance.GetPart(_type).Power;
 		var transformPosition = transform.position;
 		transformPosition.z = -0.5f;
 		var bullet = BulletPool.current.GetObject();

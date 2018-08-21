@@ -59,7 +59,6 @@ public class GameShipMover : MonoBehaviour
             t = t > 0 ? 1 : 0;
         }
         var shapeModuleAngle = Mathf.LerpUnclamped(30, 0, t);
-        Debug.Log($"{t} {shapeModuleAngle}");
         shapeModule.angle = shapeModuleAngle;
         
         var position = transform.position + mouseDelta + axisDelta;

@@ -1,0 +1,279 @@
+<?xml version="1.0"?>
+<ArrayOfUpgradeModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <UpgradeModel>
+    <id>8</id>
+    <name>+ Пушка</name>
+    <description>Добавить пушку на корабль</description>
+    <price>500</price>
+    <nextupgrades>
+      <int>9</int>
+      <int>14</int>
+    </nextupgrades>
+    <group>1</group>
+    <upgradetype>1</upgradetype>
+    <upgradevalue>1</upgradevalue>
+  </UpgradeModel>
+  <UpgradeModel>
+    <id>9</id>
+    <name>+ Скорострельность</name>
+    <description>Увеличить скорострельность на 1</description>
+    <price>100</price>
+    <nextupgrades>
+      <int>10</int>
+    </nextupgrades>
+    <group>2</group>
+    <upgradetype>1</upgradetype>
+    <upgradevalue>1</upgradevalue>
+  </UpgradeModel>
+  <UpgradeModel>
+    <id>10</id>
+    <name>+ Скорострельность</name>
+    <description>Увеличить скорострельность на 1</description>
+    <price>200</price>
+    <nextupgrades>
+      <int>11</int>
+    </nextupgrades>
+    <group>2</group>
+    <upgradetype>1</upgradetype>
+    <upgradevalue>1</upgradevalue>
+  </UpgradeModel>
+  <UpgradeModel>
+    <id>11</id>
+    <name>+ Скорострельность</name>
+    <description>Увеличить скорострельность на 1</description>
+    <price>300</price>
+    <nextupgrades>
+      <int>12</int>
+    </nextupgrades>
+    <group>2</group>
+    <upgradetype>1</upgradetype>
+    <upgradevalue>1</upgradevalue>
+  </UpgradeModel>
+  <UpgradeModel>
+    <id>12</id>
+    <name>+ Скорострельность</name>
+    <description>Увеличить скорострельность на 1</description>
+    <price>400</price>
+    <nextupgrades>
+      <int>13</int>
+    </nextupgrades>
+    <group>2</group>
+    <upgradetype>1</upgradetype>
+    <upgradevalue>1</upgradevalue>
+  </UpgradeModel>
+  <UpgradeModel>
+    <id>13</id>
+    <name>+ Скорострельность</name>
+    <description>Увеличить скорострельность на 1</description>
+    <price>500</price>
+    <group>2</group>
+    <upgradetype>1</upgradetype>
+    <upgradevalue>1</upgradevalue>
+  </UpgradeModel>
+  <UpgradeModel>
+    <id>14</id>
+    <name>+ 5</name>
+    <description>Добавить возможность поворота пушки</description>
+    <price>100</price>
+    <nextupgrades>
+      <int>15</int>
+    </nextupgrades>
+    <group>3</group>
+    <upgradetype>2</upgradetype>
+    <upgradevalue>5</upgradevalue>
+  </UpgradeModel>
+  <UpgradeModel>
+    <id>15</id>
+    <name>+ 5</name>
+    <description>Добавить возможность поворота пушки</description>
+    <price>200</price>
+    <group>3</group>
+    <upgradetype>2</upgradetype>
+    <upgradevalue>5</upgradevalue>
+  </UpgradeModel>
+  <UpgradeModel>
+    <id>16</id>
+    <name>+ Щит</name>
+    <description>Добавить щит для поглощения урона</description>
+    <price>1000</price>
+    <nextupgrades>
+      <int>17</int>
+      <int>22</int>
+      <int>27</int>
+    </nextupgrades>
+    <group>4</group>
+    <upgradetype>3</upgradetype>
+    <upgradevalue>1</upgradevalue>
+  </UpgradeModel>
+  <UpgradeModel>
+    <id>17</id>
+    <name>+ 10%</name>
+    <description>Увеличение поглощения урона</description>
+    <price>1000</price>
+    <nextupgrades>
+      <int>18</int>
+    </nextupgrades>
+    <group>5</group>
+    <upgradetype>4</upgradetype>
+    <upgradevalue>10</upgradevalue>
+  </UpgradeModel>
+  <UpgradeModel>
+    <id>18</id>
+    <name>+ 10%</name>
+    <description>Увеличение поглощения урона</description>
+    <price>2000</price>
+    <nextupgrades>
+      <int>19</int>
+    </nextupgrades>
+    <group>5</group>
+    <upgradetype>4</upgradetype>
+    <upgradevalue>10</upgradevalue>
+  </UpgradeModel>
+  <UpgradeModel>
+    <id>19</id>
+    <name>+ 10%</name>
+    <description>Увеличение поглощения урона</description>
+    <price>3000</price>
+    <nextupgrades>
+      <int>20</int>
+    </nextupgrades>
+    <group>5</group>
+    <upgradetype>4</upgradetype>
+    <upgradevalue>10</upgradevalue>
+  </UpgradeModel>
+  <UpgradeModel>
+    <id>20</id>
+    <name>+ 10%</name>
+    <description>Увеличение поглощения урона</description>
+    <price>4000</price>
+    <nextupgrades>
+      <int>21</int>
+    </nextupgrades>
+    <group>5</group>
+    <upgradetype>4</upgradetype>
+    <upgradevalue>10</upgradevalue>
+  </UpgradeModel>
+  <UpgradeModel>
+    <id>21</id>
+    <name>+ 10%</name>
+    <description>Увеличение поглощения урона</description>
+    <price>5000</price>
+    <group>5</group>
+    <upgradetype>4</upgradetype>
+    <upgradevalue>10</upgradevalue>
+  </UpgradeModel>
+  <UpgradeModel>
+    <id>22</id>
+    <name>+ 1</name>
+    <description>Увеличение количества попаданий</description>
+    <price>1000</price>
+    <nextupgrades>
+      <int>23</int>
+    </nextupgrades>
+    <group>6</group>
+    <upgradetype>5</upgradetype>
+    <upgradevalue>1</upgradevalue>
+  </UpgradeModel>
+  <UpgradeModel>
+    <id>23</id>
+    <name>+ 1</name>
+    <description>Увеличение количества попаданий</description>
+    <price>2000</price>
+    <nextupgrades>
+      <int>24</int>
+    </nextupgrades>
+    <group>6</group>
+    <upgradetype>5</upgradetype>
+    <upgradevalue>1</upgradevalue>
+  </UpgradeModel>
+  <UpgradeModel>
+    <id>24</id>
+    <name>+ 1</name>
+    <description>Увеличение количества попаданий</description>
+    <price>3000</price>
+    <nextupgrades>
+      <int>25</int>
+    </nextupgrades>
+    <group>6</group>
+    <upgradetype>5</upgradetype>
+    <upgradevalue>1</upgradevalue>
+  </UpgradeModel>
+  <UpgradeModel>
+    <id>25</id>
+    <name>+ 1</name>
+    <description>Увеличение количества попаданий</description>
+    <price>4000</price>
+    <nextupgrades>
+      <int>26</int>
+    </nextupgrades>
+    <group>6</group>
+    <upgradetype>5</upgradetype>
+    <upgradevalue>1</upgradevalue>
+  </UpgradeModel>
+  <UpgradeModel>
+    <id>26</id>
+    <name>+ 1</name>
+    <description>Увеличение количества попаданий</description>
+    <price>5000</price>
+    <group>6</group>
+    <upgradetype>5</upgradetype>
+    <upgradevalue>1</upgradevalue>
+  </UpgradeModel>
+  <UpgradeModel>
+    <id>27</id>
+    <name>-1</name>
+    <description>Уменьшение скорости восстановления щита</description>
+    <price>1000</price>
+    <nextupgrades>
+      <int>28</int>
+    </nextupgrades>
+    <group>7</group>
+    <upgradetype>6</upgradetype>
+    <upgradevalue>1</upgradevalue>
+  </UpgradeModel>
+  <UpgradeModel>
+    <id>28</id>
+    <name>-1</name>
+    <description>Уменьшение скорости восстановления щита</description>
+    <price>2000</price>
+    <nextupgrades>
+      <int>29</int>
+    </nextupgrades>
+    <group>7</group>
+    <upgradetype>6</upgradetype>
+    <upgradevalue>1</upgradevalue>
+  </UpgradeModel>
+  <UpgradeModel>
+    <id>29</id>
+    <name>-1</name>
+    <description>Уменьшение скорости восстановления щита</description>
+    <price>3000</price>
+    <nextupgrades>
+      <int>30</int>
+    </nextupgrades>
+    <group>7</group>
+    <upgradetype>6</upgradetype>
+    <upgradevalue>1</upgradevalue>
+  </UpgradeModel>
+  <UpgradeModel>
+    <id>30</id>
+    <name>-1</name>
+    <description>Уменьшение скорости восстановления щита</description>
+    <price>4000</price>
+    <nextupgrades>
+      <int>31</int>
+    </nextupgrades>
+    <group>7</group>
+    <upgradetype>6</upgradetype>
+    <upgradevalue>1</upgradevalue>
+  </UpgradeModel>
+  <UpgradeModel>
+    <id>31</id>
+    <name>-1</name>
+    <description>Уменьшение скорости восстановления щита</description>
+    <price>5000</price>
+    <group>7</group>
+    <upgradetype>6</upgradetype>
+    <upgradevalue>1</upgradevalue>
+  </UpgradeModel>
+</ArrayOfUpgradeModel>

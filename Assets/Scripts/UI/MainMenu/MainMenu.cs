@@ -1,100 +1,71 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject _mainMenuShip;
-    [SerializeField] private GameObject _cancelButton;
-    [SerializeField] private GameObject _delim;
-    [SerializeField] private GameObject _updatesContainer;
-    [SerializeField] private DescriptionUI _descriptionUi;
+    [SerializeField] private GameObject _dataContainer;
+    [SerializeField] private GameObject _shipData;
+    [SerializeField] private GameObject _missionData;
 
-    private Vector3 _startPosition = new Vector3(327, -155, 0);
-    private Vector3 _startScale = new Vector3(1, 1, 1);
-    private Vector3 _endPosition = new Vector3(36, 0, 0);
-    private Vector3 _endScale = new Vector3(0.6f, 0.6f, 1);
+    private GameObject _ship;
+    private GameObject _mission;
 
-    [SerializeField] private ElementController _selectedElement;
-
-    private bool hided = true;
+    private bool _isShipShowed;
+    private bool _isMissionShowed;
 
     private void Start()
     {
         ShowShip();
     }
 
-    public void HideShip()
-    {
-        if (hided) return;
-        hided = true;
-        var rectTransform = _mainMenuShip.GetComponent<RectTransform>();
-        rectTransform.localScale = _endScale;
-        rectTransform.anchoredPosition = _endPosition;
-        _cancelButton.SetActive(true);
-        _delim.SetActive(true);
-    }
-
     public void ShowShip()
     {
-        if (!hided) return;
-        hided = false;
-        var rectTransform = _mainMenuShip.GetComponent<RectTransform>();
-        rectTransform.localScale = _startScale;
-        rectTransform.anchoredPosition = _startPosition;
-        _cancelButton.SetActive(false);
-        _delim.SetActive(false);
-        _selectedElement = null;
-        _descriptionUi.gameObject.SetActive(false);
-        RefreshData();
-    }
-
-    //TODO: узнать как делать это красиво
-    public void SelectElement(int id)
-    {
-        _selectedElement = PlayerController.Instance.GetElement((PlayerController.ElementTypes) id);
-
-        RefreshData();
-    }
-
-    private void RefreshData()
-    {
-        HideUpdates();
-        
-        if (_selectedElement == null)
+        if (_isShipShowed)
         {
-            _descriptionUi.gameObject.SetActive(false);
             return;
         }
 
-        _descriptionUi.SetElementData(_selectedElement);
-        _descriptionUi.gameObject.SetActive(true);
-
-        var i = 0;
-        foreach (var update in _selectedElement.Updates)
+        _isShipShowed = true;
+        HidePrevious();
+        if (_ship == null)
         {
-            var item = UpdateItemPool.current.GetObject();
-            var updateUi = item.GetComponent<UpdateUI>();
-            updateUi.SetUpdateData(update);
-            updateUi.OnClick += OnClick;
-            var transform = item.GetComponent<RectTransform>();
-            transform.anchoredPosition = new Vector2(0, i++ * -transform.sizeDelta.y);
-            item.SetActive(true);
+            _ship = Instantiate(_shipData, _dataContainer.transform);
         }
+
+        _ship.GetComponent<ShipMenu>().ShowShip();
+        _ship.SetActive(true);
     }
 
-    private void OnClick(UpdateController update)
+    public void ShowMissions()
     {
-        _selectedElement.BuyUpdate(update);
-        RefreshData();
+        if (_isMissionShowed)
+        {
+            return;
+        }
+
+        _isMissionShowed = true;
+        HidePrevious();
+        if (_mission == null)
+        {
+            _mission = Instantiate(_missionData, _dataContainer.transform);
+        }
+
+        _mission.GetComponent<MissionMenu>().RefreshData();
+        _mission.SetActive(true);
     }
 
-    private void HideUpdates()
+    public void Exit()
     {
-        for (int i = 0; i < _updatesContainer.transform.childCount; i++)
-        {
-            var item = _updatesContainer.transform.GetChild(i).gameObject;
-            var updateUi = item.GetComponent<UpdateUI>();
-            updateUi.OnClick = null;
-            item.SetActive(false);
-        }
+        Application.Quit();
+    }
+
+    private void HidePrevious()
+    {
+        if (_ship != null)
+            _ship.SetActive(false);
+
+        if (_mission != null)
+            _mission.SetActive(false);
     }
 }

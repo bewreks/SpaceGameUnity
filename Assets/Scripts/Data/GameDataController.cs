@@ -1,36 +1,71 @@
 ﻿using System.IO;
+using System.Linq;
 using System.Xml.Serialization;
 using Boo.Lang;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public enum Scenes
+{
+    MAIN_MENU = 0,
+    SPACE = 1
+}
 
 public class GameDataController : MonoBehaviour
 {
+    public static GameDataController current;
 
-	public static GameDataController current;
+    [SerializeField] private TextAsset _playerXmlFile;
+    [SerializeField] private TextAsset _upgradesXmlFile;
+    [SerializeField] private TextAsset _elementsXmlFile;
+    [SerializeField] private TextAsset _boughtXmlFile;
+    [SerializeField] private TextAsset _missionXmlFile;
 
-	[SerializeField] private TextAsset _playerXmlFile;
-	[SerializeField] private TextAsset _updatesXmlFile;
-	[SerializeField] private TextAsset _elementsXmlFile;
-	[SerializeField] private TextAsset _boughtXmlFile;
+    private void Awake()
+    {
+        if (current == null)
+        {
+            current = this;
 
-	private void Awake()
-	{
-		if (current == null)
-		{
-			current = this;
-			var serializer = new XmlSerializer(typeof(List<UpdateModel>));
-			var updates = serializer.Deserialize(new StringReader(_updatesXmlFile.text)) as List<UpdateModel>;
-			UpdateManager.Init(updates);
-			
-			serializer = new XmlSerializer(typeof(List<ElementModel>));
-			var elements = serializer.Deserialize(new StringReader(_elementsXmlFile.text)) as List<ElementModel>;
-			ElementManager.Init(elements);
-			
-			serializer = new XmlSerializer(typeof(PlayerModel));
-			var player = serializer.Deserialize(new StringReader(_playerXmlFile.text)) as PlayerModel;
-			serializer = new XmlSerializer(typeof(List<BoughtModel>));
-			var bought = serializer.Deserialize(new StringReader(_boughtXmlFile.text)) as List<BoughtModel>;
-			PlayerController.Instance.Init(player, bought);
-		}
-	}
+            var missions = LoadModels<MissionModel>(_missionXmlFile);
+            MissionManager.Instance.Init(missions);
+
+            var updates = LoadModels<UpgradeModel>(_upgradesXmlFile);
+            UpgradeManager.Instance.Init(updates);
+
+            var elements = LoadModels<ElementModel>(_elementsXmlFile);
+            ElementManager.Instance.Init(elements);
+
+            var players = LoadModels<PlayerModel>(_playerXmlFile);
+            var bought = LoadModels<BoughtModel>(_boughtXmlFile);
+            PlayerController.Instance.Init(players.First(), bought);
+        }
+    }
+
+    private List<T> LoadModels<T>(TextAsset text)
+    {
+        var serializer = new XmlSerializer(typeof(List<T>));
+        return serializer.Deserialize(new StringReader(text.text)) as List<T>;
+    }
+
+    public void SwitchScene(Scenes scene)
+    {
+        switch (scene)
+        {
+            case Scenes.MAIN_MENU:
+                PlayerController.Instance.ResetTempData();
+                Cursor.visible = true;
+                break;
+            case Scenes.SPACE:
+                Cursor.visible = false;
+                break;
+        }
+
+        SceneManager.LoadSceneAsync((int) scene);
+    }
+
+    public void SwitchScene(int sceneId)
+    {
+        SwitchScene((Scenes) sceneId);
+    }
 }

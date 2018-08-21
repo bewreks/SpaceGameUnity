@@ -14,26 +14,60 @@
             <e p="Bullet.cs" t="Include" />
           </e>
           <e p="Data" t="Include">
-            <e p="Controllers" t="Include">
-              <e p="ElementController.cs" t="Include" />
-              <e p="PlayerController.cs" t="Include" />
-              <e p="UpdateController.cs" t="Include" />
-            </e>
             <e p="GameDataController.cs" t="Include" />
-            <e p="Managers" t="Include">
-              <e p="ElementManager.cs" t="Include" />
-              <e p="UpdateManager.cs" t="Include" />
-            </e>
-            <e p="Models" t="Include">
-              <e p="BoughtModel.cs" t="Include" />
-              <e p="ElementModel.cs" t="Include" />
-              <e p="PlayerModel.cs" t="Include" />
-              <e p="UpdateModel.cs" t="Include" />
+            <e p="SpaceGame" t="Include">
+              <e p="bought.xml" t="Include" />
+              <e p="elements.xml" t="Include" />
+              <e p="Main" t="Include">
+                <e p="Interfaces" t="Include">
+                  <e p="IModel.cs" t="Include" />
+                </e>
+                <e p="Managers" t="Include">
+                  <e p="MainManager.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Mission" t="Include">
+                <e p="Controllers" t="Include">
+                  <e p="MissionController.cs" t="Include" />
+                </e>
+                <e p="Managers" t="Include">
+                  <e p="MissionManager.cs" t="Include" />
+                </e>
+                <e p="Missions" t="Include">
+                  <e p="BaseMission.cs" t="Include" />
+                  <e p="DemoMission.cs" t="Include" />
+                </e>
+                <e p="Models" t="Include">
+                  <e p="MissionModel.cs" t="Include" />
+                </e>
+              </e>
+              <e p="missions.xml" t="Include" />
+              <e p="player.xml" t="Include" />
+              <e p="Shop" t="Include">
+                <e p="Controllers" t="Include">
+                  <e p="ElementController.cs" t="Include" />
+                  <e p="Part.cs" t="Include" />
+                  <e p="PlayerController.cs" t="Include" />
+                  <e p="UpgradeController.cs" t="Include" />
+                </e>
+                <e p="Managers" t="Include">
+                  <e p="ElementManager.cs" t="Include" />
+                  <e p="UpgradeManager.cs" t="Include" />
+                </e>
+                <e p="Models" t="Include">
+                  <e p="BoughtModel.cs" t="Include" />
+                  <e p="ElementModel.cs" t="Include" />
+                  <e p="PlayerModel.cs" t="Include" />
+                  <e p="UpgradeModel.cs" t="Include" />
+                </e>
+              </e>
+              <e p="upgrades.xml" t="Include" />
             </e>
           </e>
           <e p="DemoGameScript.cs" t="Include" />
           <e p="GameEvents.cs" t="Include" />
           <e p="GameObjectMover.cs" t="Include" />
+          <e p="GameScript.cs" t="Include" />
           <e p="GameShip" t="Include">
             <e p="GameShip.cs" t="Include" />
             <e p="GameShipMover.cs" t="Include" />
@@ -46,8 +80,9 @@
             <e p="AsteroidPool.cs" t="Include" />
             <e p="BulletPool.cs" t="Include" />
             <e p="MedKitPool.cs" t="Include" />
+            <e p="MissionsPool.cs" t="Include" />
             <e p="Pool.cs" t="Include" />
-            <e p="UpdateItemPool.cs" t="Include" />
+            <e p="UpgradeItemPool.cs" t="Include" />
           </e>
           <e p="Shop" t="Include">
             <e p="Shop.cs" t="Include" />
@@ -60,27 +95,22 @@
             <e p="MainMenu" t="Include">
               <e p="DescriptionUI.cs" t="Include" />
               <e p="MainMenu.cs" t="Include" />
-              <e p="UpdateUI.cs" t="Include" />
+              <e p="MissionMenu.cs" t="Include" />
+              <e p="MissionUI.cs" t="Include" />
+              <e p="ShipMenu.cs" t="Include" />
+              <e p="UpgradeUI.cs" t="Include" />
             </e>
           </e>
         </e>
         <e p="Shaders" t="Include">
           <e p="background.shader" t="Include" />
         </e>
-        <e p="XML" t="Include">
-          <e p="bought.xml" t="Include" />
-          <e p="elements.xml" t="Include" />
-          <e p="player.xml" t="Include" />
-          <e p="updates.xml" t="Include" />
-        </e>
       </e>
       <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="SpaceGameUnity.sln" t="IncludeFlat" />
-      <e p="Temp" t="ExcludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-      </e>
+      <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
   </component>
 </project>
