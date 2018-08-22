@@ -11,9 +11,9 @@ public enum Scenes
     SPACE = 1
 }
 
-public class GameDataController : MonoBehaviour
+public class GameController : MonoBehaviour
 {
-    public static GameDataController current;
+    public static GameController current;
 
     [SerializeField] private TextAsset _playerXmlFile;
     [SerializeField] private TextAsset _upgradesXmlFile;

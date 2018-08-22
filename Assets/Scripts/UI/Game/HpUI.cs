@@ -15,8 +15,8 @@ public class HpUI : MonoBehaviour {
 		GameEvents.current.HP_CHANGED += HpChanged;
 	}
 
-	private void HpChanged(int hp)
+	private void HpChanged(float hp)
 	{
-		_text.text = hp.ToString();
+		_text.text = Mathf.FloorToInt(hp).ToString();
 	}
 }

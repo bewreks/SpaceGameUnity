@@ -1,23 +1,13 @@
 ﻿using UnityEngine;
 
 public class Asteroid : MonoBehaviour {
-
-	struct AsteroidData
-	{
-		public float hp;
-	}
 	
 	[SerializeField] private float _lifeTime = 2;
-	[SerializeField] private int _damage;
-	[SerializeField] private int _hp;
-	[SerializeField] private int _score;
-	[SerializeField] private GameObject _explosion;
 
-	private AsteroidData _data;
+	private AsteroidController _controller;
 
 	private void OnEnable()
 	{
-		_data.hp = _hp;
 		Invoke("Remove", _lifeTime);
 	}
 
@@ -27,17 +17,15 @@ public class Asteroid : MonoBehaviour {
 		{
 			case "Bullet":
 				var bullet = other.GetComponent<Bullet>();
-				_data.hp -= bullet.Damage;
-				GameEvents.current.SCORE_CHANGE(_score);
+				_controller.DoDamage(bullet.Damage);
 				bullet.Hit();
 				break;
 			case "Player":
-				_data.hp = 0;
-				GameEvents.current.HP_CHANGE(-_damage);
+				_controller.Suicide();
 				break;
 		}
 
-		if (_data.hp <= 0)
+		if (!_controller.IsAlive)
 		{
 			Remove();
 		}
@@ -46,11 +34,40 @@ public class Asteroid : MonoBehaviour {
 	private void Remove()
 	{
 		gameObject.SetActive(false);
-		Instantiate(_explosion, transform.position, transform.rotation);
+		var explosion = ExplosionsPool.current.GetObject();
+		explosion.transform.position = transform.position;
+		explosion.transform.rotation = transform.rotation;
+		explosion.SetActive(true);
 	}
 
 	private void OnDisable()
 	{
 		CancelInvoke("Remove");
+	}
+
+	public void SetController(AsteroidController controller, Quaternion rotation)
+	{
+		_controller = controller;
+		_controller.OnKill += OnKill;
+		
+		transform.localScale = Vector3.one * _controller.Radius;
+		GetComponent<GameObjectMover>().Speed = _controller.Speed;
+		var transformPosition = new Vector3(_controller.X, _controller.Y, _controller.Z);
+		transform.position = transformPosition;
+		transform.rotation = rotation;
+		gameObject.SetActive(true);
+
+	}
+
+	private void OnKill(AsteroidController obj)
+	{
+		if (_controller.IsSuicide)
+		{
+			GameEvents.current.HP_CHANGE(-_controller.Damage);
+		}
+		else
+		{
+			GameEvents.current.SCORE_CHANGE(_controller.Score);
+		}
 	}
 }

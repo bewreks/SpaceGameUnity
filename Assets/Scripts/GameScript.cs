@@ -1,46 +1,73 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class GameScript : MonoBehaviour
 {
+    private BaseMission _mission;
 
+    private int _id = 0;
+    
     public void Start()
     {
         var missionClass = PlayerController.Instance.CurrentMission?.MissionClass??typeof(DemoMission);
         var instance = Activator.CreateInstance(missionClass);
-        var mission = (BaseMission) instance;
-        GameEvents.current.SCORE_CHANGED += mission.UpdateScore;
-        mission.CreateAsteroid = CreateAsteroid;
-        mission.CreateMedic = CreateMedic;
-        mission.Waiting = Waiting;
-        mission.Random = Random.Range;
-        mission.StartCoroutine = StartCoroutine;
-        mission.StartMission();
+        _mission = (BaseMission) instance;
+        GameEvents.current.SCORE_CHANGED += _mission.UpdateScore;
+        _mission.CreateAsteroid = CreateAsteroid;
+        _mission.CreateMedic = CreateMedic;
+        _mission.Waiting = Waiting;
+        _mission.Random = Random.Range;
+        _mission.StartMission();
     }
 
-    private YieldInstruction Waiting(float waiting)
+    private void Waiting(float waiting)
     {
-        return new WaitForSeconds(waiting);
+        StartCoroutine(CoroutineWaiting(waiting));
     }
 
-    private void CreateMedic(float x, float y)
+    private IEnumerator CoroutineWaiting(float waiting)
     {
-        var asteroid = MedKitPool.current.GetObject();
-        var transformPosition = new Vector3(25, y, 1);
-        asteroid.transform.position = transformPosition;
-        asteroid.transform.rotation = transform.rotation;
-        asteroid.SetActive(true);
+        yield return new WaitForSeconds(waiting);
+        _mission.OnWaitingEnd();
     }
 
-    private void CreateAsteroid(float radius, float x, float y, float speed)
+    private MedkitController CreateMedic(MedkitModelIniter initer)
     {
+        var model = new MedKitModel
+        {
+            id = ++_id,
+            heal = 10,
+            score = 100,
+            x = initer.x,
+            y = initer.y,
+            z = 1
+        };
+        var medkitController = new MedkitController(model);
+        var medkit = MedKitPool.current.GetObject();
+        medkit.GetComponent<MedKit>().SetController(medkitController, transform.rotation);
+        return medkitController;
+    }
+
+    private AsteroidController CreateAsteroid(AsteroidModelIniter initer)
+    {
+        var model = new AsteroidModel
+        {
+            id = ++_id,
+            damage = 10,
+            hp = 10,
+            radius = initer.radius,
+            speed = initer.speed,
+            x = initer.x,
+            y = initer.y,
+            z = 1, 
+            score = 100
+        };
+
+        var asteroidController = new AsteroidController(model);
         var asteroid = AsteroidPool.current.GetObject();
-        asteroid.transform.localScale = Vector3.one * radius;
-        asteroid.GetComponent<GameObjectMover>().Speed = speed;
-        var transformPosition = new Vector3(25, y, 1);
-        asteroid.transform.position = transformPosition;
-        asteroid.transform.rotation = transform.rotation;
-        asteroid.SetActive(true);
+        asteroid.GetComponent<Asteroid>().SetController(asteroidController, transform.rotation);
+        return asteroidController;
     }
 }

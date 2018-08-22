@@ -14,7 +14,7 @@
             <e p="Bullet.cs" t="Include" />
           </e>
           <e p="Data" t="Include">
-            <e p="GameDataController.cs" t="Include" />
+            <e p="GameController.cs" t="Include" />
             <e p="SpaceGame" t="Include">
               <e p="bought.xml" t="Include" />
               <e p="elements.xml" t="Include" />
@@ -28,6 +28,8 @@
               </e>
               <e p="Mission" t="Include">
                 <e p="Controllers" t="Include">
+                  <e p="AsteroidController.cs" t="Include" />
+                  <e p="MedkitController.cs" t="Include" />
                   <e p="MissionController.cs" t="Include" />
                 </e>
                 <e p="Managers" t="Include">
@@ -36,8 +38,16 @@
                 <e p="Missions" t="Include">
                   <e p="BaseMission.cs" t="Include" />
                   <e p="DemoMission.cs" t="Include" />
+                  <e p="KillTenAsteriodsMission.cs" t="Include" />
+                  <e p="TestMission.cs" t="Include" />
                 </e>
                 <e p="Models" t="Include">
+                  <e p="AsteroidModel.cs" t="Include" />
+                  <e p="Initers" t="Include">
+                    <e p="AsteroidModelIniter.cs" t="Include" />
+                    <e p="MedkitModelIniter.cs" t="Include" />
+                  </e>
+                  <e p="MedKitModel.cs" t="Include" />
                   <e p="MissionModel.cs" t="Include" />
                 </e>
               </e>
@@ -79,6 +89,7 @@
           <e p="Pools" t="Include">
             <e p="AsteroidPool.cs" t="Include" />
             <e p="BulletPool.cs" t="Include" />
+            <e p="ExplosionsPool.cs" t="Include" />
             <e p="MedKitPool.cs" t="Include" />
             <e p="MissionsPool.cs" t="Include" />
             <e p="Pool.cs" t="Include" />
@@ -110,7 +121,9 @@
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="SpaceGameUnity.sln" t="IncludeFlat" />
-      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
     </e>
   </component>
 </project>

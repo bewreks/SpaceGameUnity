@@ -1,28 +1,36 @@
-﻿using System.Collections;
-
-public class DemoMission : BaseMission
+﻿public class DemoMission : BaseMission
 {
-    private float _asteriodRate = 1;
-    
-    public override void StartMission()
+    private float _asteriodRate;
+
+    protected override void OnMissionStart()
     {
-        StartCoroutine(Round());
+        _asteriodRate = 1;
     }
 
-    private IEnumerator Round()
+    protected override void OnRoundStart()
     {
-        var isMedic = Random(0, 4) % 4 == 0;
+        var random = (int)Random(0, 4);
+        var isMedic = random % 4 == 0;
         if (isMedic)
         {
-            CreateMedic(25, Random(-5.0f, 5.0f));
+            CreateMedic(new MedkitModelIniter
+            {
+                x = 25,
+                y = Random(-5.0f, 5.0f),
+            });
         }
         else
         {
-            CreateAsteroid(Random(0.3f, 1), 25, Random(-5.0f, 5.0f), Random(-6, -3));
+            CreateAsteroid(new AsteroidModelIniter
+            {
+                radius = Random(0.3f, 1),
+                x = 25,
+                y = Random(-5.0f, 5.0f),
+                speed= Random(-6, -3)
+            });
         }
             
-        yield return Waiting(1 / _asteriodRate);
-        StartCoroutine(Round());
+        Waiting(1 / _asteriodRate);
     }
 
     public override void UpdateScore(int score)
@@ -39,5 +47,10 @@ public class DemoMission : BaseMission
                 part.AddTempPower(1);
             }
         }
+    }
+
+    public override void OnWaitingEnd()
+    {
+        Round();
     }
 }

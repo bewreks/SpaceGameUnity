@@ -5,7 +5,6 @@ using UnityEngine;
 public class GameShip : MonoBehaviour
 {
 	[SerializeField] private GameObject[] _guns;
-	[SerializeField] private GameObject _explosion;
 	
 	void Start ()
 	{
@@ -16,6 +15,9 @@ public class GameShip : MonoBehaviour
 	private void OnPlayerDead()
 	{
 		gameObject.SetActive(false);
-		Instantiate(_explosion, transform.position, transform.rotation);
+		var explosion = ExplosionsPool.current.GetObject();
+		explosion.transform.position = transform.position;
+		explosion.transform.rotation = transform.rotation;
+		explosion.SetActive(true);
 	}
 }

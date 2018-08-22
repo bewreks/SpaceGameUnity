@@ -7,4 +7,11 @@
     <description>Демонстнационная миссия</description>
     <missionclass>DemoMission</missionclass>
   </MissionModel>
+  <MissionModel>
+    <id>2</id>
+    <price>100</price>
+    <name>Зачистить орбиту</name>
+    <description>Уничтожить 10 астероидов</description>
+    <missionclass>KillTenAsteriodsMission</missionclass>
+  </MissionModel>
 </ArrayOfMissionModel>

@@ -8,12 +8,12 @@ public class PlayerManager : MonoBehaviour
 	[SerializeField] private GameObject _ship;
 	[SerializeField] private int _maxHP = 1000;
 
-	private int _hp;
+	private float _hp;
 	private int _score;
 	
 	public int Gun => 4;
 
-	public int Hp
+	public float Hp
 	{
 		get { return _hp; }
 		set

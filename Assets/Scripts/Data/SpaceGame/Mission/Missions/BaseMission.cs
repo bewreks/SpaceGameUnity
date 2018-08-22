@@ -1,15 +1,39 @@
 ﻿using System;
-using System.Collections;
-using UnityEngine;
 
 public abstract class BaseMission
 {
-    public Action<float, float, float, float> CreateAsteroid { set; protected get; }
-    public Action<float, float> CreateMedic { set; protected get; }
+    protected bool _stop = false;
+    public bool IsEnd => _stop;
+    
+    public Action OnMissionEnd { get; set; }
+    public Func<AsteroidModelIniter, AsteroidController> CreateAsteroid { set; protected get; }
+    public Func<MedkitModelIniter, MedkitController> CreateMedic { set; protected get; }
+    public Action<float> Waiting { set; protected get; }
     public Func<float, float, float> Random { set; protected get; }
-    public Func<float, YieldInstruction> Waiting { set; protected get; }
-    public Func<IEnumerator, Coroutine> StartCoroutine { set; protected get; }
 
-    public abstract void StartMission();
+    public void StartMission()
+    {
+        OnMissionStart();
+        Round();
+    }
+
+    public void StopMission()
+    {
+        _stop = true;
+        OnMissionEnd();
+    }
+
+    public void Round()
+    {
+        if (_stop)
+        {
+            return;
+        }
+        OnRoundStart();
+    }
+    
+    protected abstract void OnRoundStart();
+    protected abstract void OnMissionStart();
     public abstract void UpdateScore(int score);
+    public abstract void OnWaitingEnd();
 }

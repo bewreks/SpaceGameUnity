@@ -1,15 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MedKit : MonoBehaviour {
 	[SerializeField] private float _lifeTime = 2;
-	[SerializeField] private int _heal = 10;
-	[SerializeField] private int _score = 100;
+
+	private MedkitController _controller;
 
 	private void OnEnable()
 	{
 		Invoke("Remove", _lifeTime);
+	}
+
+	public void SetController(MedkitController controller, Quaternion rotation)
+	{
+		_controller = controller;
+		_controller.OnPickup += OnPickup;
+		var transformPosition = new Vector3(_controller.X, _controller.Y, _controller.Z);
+		transform.position = transformPosition;
+		transform.rotation = rotation;
+		gameObject.SetActive(true);
+	}
+
+	private void OnPickup(MedkitController objcontroller)
+	{
+		GameEvents.current.HP_CHANGE(_controller.Heal);
+		GameEvents.current.SCORE_CHANGE(_controller.Score);
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
@@ -18,8 +32,7 @@ public class MedKit : MonoBehaviour {
 		{
 			case "Player":
 				Remove();
-				GameEvents.current.HP_CHANGE(_heal);
-				GameEvents.current.SCORE_CHANGE(_score);
+				_controller.Pickup();
 				break;
 		}
 	}

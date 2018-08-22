@@ -29,7 +29,7 @@ public class MissionMenu : MonoBehaviour
 	private void OnClick(MissionController mission)
 	{
 		PlayerController.Instance.SelectMission(mission);
-		GameDataController.current.SwitchScene(Scenes.SPACE);
+		GameController.current.SwitchScene(Scenes.SPACE);
 	}
 
 	private void HideUpdates()
