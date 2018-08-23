@@ -1,53 +1,48 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
-public class ShipMenu : MonoBehaviour
+public class ShipMenu : UIMenu
 {
-    [SerializeField] private GameObject _mainMenuShip;
+    [SerializeField] private ShipInteractive _shipInteractive;
     [SerializeField] private GameObject _cancelButton;
     [SerializeField] private GameObject _delim;
     [SerializeField] private GameObject _upgradesContainer;
     [SerializeField] private DescriptionUI _descriptionUi;
-
-    private Vector3 _startPosition = new Vector3(327, -155, 0);
-    private Vector3 _startScale = new Vector3(1, 1, 1);
-    private Vector3 _endPosition = new Vector3(36, 0, 0);
-    private Vector3 _endScale = new Vector3(0.6f, 0.6f, 1);
+    [SerializeField] private Text _money;
 
     [SerializeField] private Part _selectedPart;
 
-    private bool hided = true;
+    private bool _minimized = true;
 
-    private void Start()
+    public void MinimizeShip()
     {
-        ShowShip();
-    }
-
-    public void HideShip()
-    {
-        if (hided) return;
-        hided = true;
-        var rectTransform = _mainMenuShip.GetComponent<RectTransform>();
-        rectTransform.localScale = _endScale;
-        rectTransform.anchoredPosition = _endPosition;
+        if (_minimized)
+        {
+            return;
+        }
+        _minimized = true;
+        _shipInteractive.Minimize();
         _cancelButton.SetActive(true);
         _delim.SetActive(true);
+        UpdateMoney();
     }
 
-    public void ShowShip()
+    public void MaximizeShip()
     {
-        if (!hided) return;
-        hided = false;
-        var rectTransform = _mainMenuShip.GetComponent<RectTransform>();
-        rectTransform.localScale = _startScale;
-        rectTransform.anchoredPosition = _startPosition;
+        if (!_minimized)
+        {
+            return;
+        }
+        _minimized = false;
+        _shipInteractive.Maximize();
         _cancelButton.SetActive(false);
         _delim.SetActive(false);
         _selectedPart = null;
-        _descriptionUi.gameObject.SetActive(false);
+        _descriptionUi.Hide();
         RefreshData();
+        UpdateMoney();
     }
 
-    //TODO: узнать как делать это красиво
     public void SelectElement(int id)
     {
         _selectedPart = PlayerController.Instance.GetPart(id);
@@ -61,29 +56,27 @@ public class ShipMenu : MonoBehaviour
         
         if (_selectedPart == null)
         {
-            _descriptionUi.gameObject.SetActive(false);
+            _descriptionUi.Hide();
             return;
         }
 
-        _descriptionUi.SetElementData(_selectedPart);
-        _descriptionUi.gameObject.SetActive(true);
+        _descriptionUi.Show(_selectedPart);
 
         var i = 0;
         foreach (var upgrade in _selectedPart.Upgrades)
         {
             var item = UpgradeItemPool.current.GetObject();
             var upgradeUi = item.GetComponent<UpgradeUI>();
-            upgradeUi.SetUpgradeData(upgrade);
+            upgradeUi.SetController(upgrade);
             upgradeUi.OnClick += OnClick;
-            var transform = item.GetComponent<RectTransform>();
-            transform.anchoredPosition = new Vector2(0, i++ * -transform.sizeDelta.y);
-            item.SetActive(true);
+            upgradeUi.Show(i++);
         }
     }
 
     private void OnClick(UpgradeController upgrade)
     {
         PlayerController.Instance.BuyUpgrade(_selectedPart.Type, upgrade);
+        UpdateMoney();
         RefreshData();
     }
 
@@ -93,8 +86,23 @@ public class ShipMenu : MonoBehaviour
         {
             var item = _upgradesContainer.transform.GetChild(i).gameObject;
             var upgradeUi = item.GetComponent<UpgradeUI>();
-            upgradeUi.OnClick = null;
-            item.SetActive(false);
+            upgradeUi.Hide();
         }
+    }
+
+    private void UpdateMoney()
+    {
+        _money.text = $"У вас ${PlayerController.Instance.Money}";
+    }
+
+    protected override void OnShow()
+    {
+        gameObject.SetActive(true);
+        MaximizeShip();
+    }
+
+    protected override void OnHide()
+    {
+        gameObject.SetActive(false);
     }
 }

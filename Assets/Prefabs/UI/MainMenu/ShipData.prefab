@@ -242,6 +242,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224290403647589868}
+  - component: {fileID: 114115656213506652}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -330,7 +331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136aaee5cca51694eb9e954cfbb65394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mainMenuShip: {fileID: 1859954806541368}
+  _shipInteractive: {fileID: 114115656213506652}
   _cancelButton: {fileID: 1865732376033742}
   _delim: {fileID: 1594218317765318}
   _upgradesContainer: {fileID: 1749305732501984}
@@ -375,7 +376,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114025337857923718}
-        m_MethodName: HideShip
+        m_MethodName: MinimizeShip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -519,6 +520,21 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "\u0421\u043A\u043E\u0440\u043E\u0441\u0442\u0440\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C:
     0\n\u041F\u043E\u0432\u043E\u0440\u043E\u0442: 0"
+--- !u!114 &114115656213506652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1859954806541368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 072b42033aaedab45b243909f3e4f72d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startPosition: {x: 327, y: -155, z: 0}
+  _startScale: {x: 1, y: 1, z: 1}
+  _endPosition: {x: 36, y: 0, z: 0}
+  _endScale: {x: 0.6, y: 0.6, z: 1}
 --- !u!114 &114254214127406564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -660,7 +676,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114025337857923718}
-        m_MethodName: HideShip
+        m_MethodName: MinimizeShip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -777,7 +793,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114025337857923718}
-        m_MethodName: HideShip
+        m_MethodName: MinimizeShip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -947,7 +963,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114025337857923718}
-        m_MethodName: ShowShip
+        m_MethodName: MaximizeShip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1026,7 +1042,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114025337857923718}
-        m_MethodName: HideShip
+        m_MethodName: MinimizeShip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1116,7 +1132,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114025337857923718}
-        m_MethodName: HideShip
+        m_MethodName: MinimizeShip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1179,7 +1195,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114025337857923718}
-        m_MethodName: HideShip
+        m_MethodName: MinimizeShip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

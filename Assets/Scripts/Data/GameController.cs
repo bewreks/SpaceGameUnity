@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
 using Boo.Lang;
@@ -14,6 +15,7 @@ public enum Scenes
 public class GameController : MonoBehaviour
 {
     public static GameController current;
+    public static Action OnLoad;
 
     [SerializeField] private TextAsset _playerXmlFile;
     [SerializeField] private TextAsset _upgradesXmlFile;
@@ -25,8 +27,6 @@ public class GameController : MonoBehaviour
     {
         if (current == null)
         {
-            current = this;
-
             var missions = LoadModels<MissionModel>(_missionXmlFile);
             MissionManager.Instance.Init(missions);
 
@@ -39,6 +39,10 @@ public class GameController : MonoBehaviour
             var players = LoadModels<PlayerModel>(_playerXmlFile);
             var bought = LoadModels<BoughtModel>(_boughtXmlFile);
             PlayerController.Instance.Init(players.First(), bought);
+            
+            current = this;
+            
+            OnLoad?.Invoke();
         }
     }
 

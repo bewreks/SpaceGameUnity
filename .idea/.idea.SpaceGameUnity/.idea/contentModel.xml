@@ -105,11 +105,16 @@
             </e>
             <e p="MainMenu" t="Include">
               <e p="DescriptionUI.cs" t="Include" />
+              <e p="Item" t="Include">
+                <e p="ItemUI.cs" t="Include" />
+                <e p="MissionUI.cs" t="Include" />
+                <e p="UpgradeUI.cs" t="Include" />
+              </e>
               <e p="MainMenu.cs" t="Include" />
               <e p="MissionMenu.cs" t="Include" />
-              <e p="MissionUI.cs" t="Include" />
+              <e p="ShipInteractive.cs" t="Include" />
               <e p="ShipMenu.cs" t="Include" />
-              <e p="UpgradeUI.cs" t="Include" />
+              <e p="UIMenu.cs" t="Include" />
             </e>
           </e>
         </e>

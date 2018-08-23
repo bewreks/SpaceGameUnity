@@ -1,22 +1,17 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class UpgradeUI : MonoBehaviour
+public class UpgradeUI : ItemUI<UpgradeController>
 {
     [SerializeField] private Text _name;
     [SerializeField] private Text _description;
     [SerializeField] private Text _price;
 
-    private UpgradeController _upgrade;
-    public Action<UpgradeController> OnClick;
-
-    public void SetUpgradeData(UpgradeController update)
+    protected override void OnSetController()
     {
-        _upgrade = update;
-        _name.text = _upgrade.Name;
-        _description.text = _upgrade.Description;
-        switch (update.Type)
+        _name.text = _controller.Name;
+        _description.text = _controller.Description;
+        switch (_controller.Type)
         {
             case UpgradeTypes.AddShield:
             case UpgradeTypes.IncreaseGunRotate:
@@ -27,11 +22,14 @@ public class UpgradeUI : MonoBehaviour
                 break;
         }
 
-        _price.text = _upgrade.Price.ToString();
+        _price.text = _controller.Price.ToString();
     }
 
-    public void Click()
+    protected override void OnShow()
     {
-        OnClick?.Invoke(_upgrade);
+    }
+
+    protected override void OnHide()
+    {
     }
 }

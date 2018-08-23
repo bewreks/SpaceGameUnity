@@ -104,11 +104,14 @@
     <Compile Include="Assets\Scripts\UI\Game\HpUI.cs" />
     <Compile Include="Assets\Scripts\UI\Game\ScoreUI.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenu\DescriptionUI.cs" />
+    <Compile Include="Assets\Scripts\UI\MainMenu\Item\ItemUI.cs" />
+    <Compile Include="Assets\Scripts\UI\MainMenu\Item\MissionUI.cs" />
+    <Compile Include="Assets\Scripts\UI\MainMenu\Item\UpgradeUI.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenu\MissionMenu.cs" />
-    <Compile Include="Assets\Scripts\UI\MainMenu\MissionUI.cs" />
+    <Compile Include="Assets\Scripts\UI\MainMenu\ShipInteractive.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenu\ShipMenu.cs" />
-    <Compile Include="Assets\Scripts\UI\MainMenu\UpgradeUI.cs" />
+    <Compile Include="Assets\Scripts\UI\MainMenu\UIMenu.cs" />
     <None Include="Assets\Scripts\Data\SpaceGame\elements.xml" />
     <None Include="Assets\Scripts\Data\SpaceGame\bought.xml" />
     <None Include="Assets\Scripts\Data\SpaceGame\player.xml" />
