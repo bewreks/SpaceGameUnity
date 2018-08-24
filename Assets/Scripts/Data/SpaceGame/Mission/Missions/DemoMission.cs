@@ -15,7 +15,7 @@
         {
             CreateMedic(new MedkitModelIniter
             {
-                x = 25,
+                x = 19.5f,
                 y = Random(-5.0f, 5.0f),
             });
         }
@@ -24,7 +24,7 @@
             CreateAsteroid(new AsteroidModelIniter
             {
                 radius = Random(0.3f, 1),
-                x = 25,
+                x = 19.5f,
                 y = Random(-5.0f, 5.0f),
                 speed= Random(-6, -3)
             });

@@ -74,7 +74,6 @@
               <e p="upgrades.xml" t="Include" />
             </e>
           </e>
-          <e p="DemoGameScript.cs" t="Include" />
           <e p="GameEvents.cs" t="Include" />
           <e p="GameObjectMover.cs" t="Include" />
           <e p="GameScript.cs" t="Include" />
@@ -87,13 +86,10 @@
           <e p="Pauser.cs" t="Include" />
           <e p="PlayerManager.cs" t="Include" />
           <e p="Pools" t="Include">
-            <e p="AsteroidPool.cs" t="Include" />
-            <e p="BulletPool.cs" t="Include" />
-            <e p="ExplosionsPool.cs" t="Include" />
-            <e p="MedKitPool.cs" t="Include" />
-            <e p="MissionsPool.cs" t="Include" />
-            <e p="Pool.cs" t="Include" />
-            <e p="UpgradeItemPool.cs" t="Include" />
+            <e p="ObjectPooling.cs" t="Include" />
+            <e p="PoolManager.cs" t="Include" />
+            <e p="PoolObject.cs" t="Include" />
+            <e p="PoolSetup.cs" t="Include" />
           </e>
           <e p="Shop" t="Include">
             <e p="Shop.cs" t="Include" />

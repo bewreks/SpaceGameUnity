@@ -29,6 +29,7 @@ public abstract class ItemUI<T> : MonoBehaviour
     {
         var rectTransform = GetComponent<RectTransform>();
         rectTransform.anchoredPosition = new Vector2(0, pos * -rectTransform.sizeDelta.y);
+        rectTransform.localScale = Vector3.one;
         gameObject.SetActive(true);
         OnShow();
     }

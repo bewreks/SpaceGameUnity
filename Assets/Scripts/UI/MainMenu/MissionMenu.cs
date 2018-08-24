@@ -11,7 +11,7 @@ public class MissionMenu : UIMenu
 		var i = 0;
 		foreach (var mission in MissionManager.Instance.GetControllers())
 		{
-			var item = MissionsPool.current.GetObject();
+			var item = PoolManager.GetObject(PoolsEnum.MISSION_ITEM);
 			var missionUi = item.GetComponent<MissionUI>();
 			missionUi.SetController(mission);
 			missionUi.OnClick += OnClick;
@@ -37,6 +37,7 @@ public class MissionMenu : UIMenu
 
 	protected override void OnShow()
 	{
+		PoolManager.UpdateParent(PoolsEnum.MISSION_ITEM, _missionsContainer.transform);
 		gameObject.SetActive(true);
 		RefreshData();
 	}

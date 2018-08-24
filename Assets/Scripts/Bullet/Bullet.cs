@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
 	[SerializeField] private float _speed = 30;
 	[SerializeField] private float _lifeTime = 2;
 	[SerializeField] private float _damage;
-
+	
 	public float Damage => _damage;
 
 	private void OnEnable()
@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
 
 	public void Remove()
 	{
-		gameObject.SetActive(false);
+		GetComponent<PoolObject>().ReturnToPool();
 	}
 
 	private void OnDisable()

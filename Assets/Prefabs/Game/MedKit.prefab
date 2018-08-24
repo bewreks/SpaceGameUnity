@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 58176280277162530}
   - component: {fileID: 114970633248403636}
   - component: {fileID: 114732607962167432}
+  - component: {fileID: 114977499283569304}
   m_Layer: 0
   m_Name: MedKit
   m_TagString: Untagged
@@ -82,8 +83,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lifeTime: 10
-  _heal: 10
-  _score: 100
+--- !u!114 &114977499283569304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1557826098062418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 142b154d505015148abdab0e228a0325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212193399455763802
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224127030859568668}
-  - component: {fileID: 114449159546159818}
   m_Layer: 0
   m_Name: Missions
   m_TagString: Untagged
@@ -43,20 +42,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114449159546159818
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1155093613631442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2936ad4193b8b64fa80cb4c1e2eb3a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pooledObject: {fileID: 1790698461111628, guid: 95033019df681f0459e9bc2ff834688e,
-    type: 2}
-  _objects: []
 --- !u!114 &114906068213137996
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -11,7 +11,7 @@ public class GameScript : MonoBehaviour
     
     public void Start()
     {
-        var missionClass = PlayerController.Instance.CurrentMission?.MissionClass??typeof(DemoMission);
+        var missionClass = PlayerController.Instance.CurrentMission?.MissionClass??typeof(TestMission);
         var instance = Activator.CreateInstance(missionClass);
         _mission = (BaseMission) instance;
         GameEvents.current.SCORE_CHANGED += _mission.UpdateScore;
@@ -19,7 +19,14 @@ public class GameScript : MonoBehaviour
         _mission.CreateMedic = CreateMedic;
         _mission.Waiting = Waiting;
         _mission.Random = Random.Range;
+        _mission.OnMissionEnd += OnMissionEnd;
         _mission.StartMission();
+    }
+
+    private void OnMissionEnd()
+    {
+        PlayerController.Instance.AddMoney(PlayerController.Instance.CurrentMission.Price);
+        GameController.current.SwitchScene(Scenes.MAIN_MENU);
     }
 
     private void Waiting(float waiting)
@@ -45,7 +52,7 @@ public class GameScript : MonoBehaviour
             z = 1
         };
         var medkitController = new MedkitController(model);
-        var medkit = MedKitPool.current.GetObject();
+        var medkit = PoolManager.GetObject(PoolsEnum.MEDKIT);
         medkit.GetComponent<MedKit>().SetController(medkitController, transform.rotation);
         return medkitController;
     }
@@ -66,7 +73,7 @@ public class GameScript : MonoBehaviour
         };
 
         var asteroidController = new AsteroidController(model);
-        var asteroid = AsteroidPool.current.GetObject();
+        var asteroid = PoolManager.GetObject(PoolsEnum.ASTEROID);
         asteroid.GetComponent<Asteroid>().SetController(asteroidController, transform.rotation);
         return asteroidController;
     }

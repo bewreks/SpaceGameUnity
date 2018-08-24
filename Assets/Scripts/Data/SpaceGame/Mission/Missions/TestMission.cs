@@ -8,6 +8,7 @@
     
     protected override void OnRoundStart()
     {
+        return;
         if (Random(0, 1) > 0.5f)
         {
             var asteroidController = CreateAsteroid(new AsteroidModelIniter());

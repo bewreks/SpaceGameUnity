@@ -82,6 +82,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shootRate: 1
+  _type: 0
+  _bulletContainer: {fileID: 0}
 --- !u!212 &212358490865397594
 SpriteRenderer:
   m_ObjectHideFlags: 1

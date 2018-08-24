@@ -9,7 +9,7 @@
   </MissionModel>
   <MissionModel>
     <id>2</id>
-    <price>100</price>
+    <price>250</price>
     <name>Зачистить орбиту</name>
     <description>Уничтожить 10 астероидов</description>
     <missionclass>KillTenAsteriodsMission</missionclass>

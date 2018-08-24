@@ -65,7 +65,7 @@ public class ShipMenu : UIMenu
         var i = 0;
         foreach (var upgrade in _selectedPart.Upgrades)
         {
-            var item = UpgradeItemPool.current.GetObject();
+            var item = PoolManager.GetObject(PoolsEnum.UPGRADE_ITEM);
             var upgradeUi = item.GetComponent<UpgradeUI>();
             upgradeUi.SetController(upgrade);
             upgradeUi.OnClick += OnClick;
@@ -97,6 +97,7 @@ public class ShipMenu : UIMenu
 
     protected override void OnShow()
     {
+        PoolManager.UpdateParent(PoolsEnum.UPGRADE_ITEM, _upgradesContainer.transform);
         gameObject.SetActive(true);
         MaximizeShip();
     }

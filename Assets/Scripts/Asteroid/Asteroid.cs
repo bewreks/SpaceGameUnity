@@ -34,7 +34,7 @@ public class Asteroid : MonoBehaviour {
 	private void Remove()
 	{
 		gameObject.SetActive(false);
-		var explosion = ExplosionsPool.current.GetObject();
+		var explosion = PoolManager.GetObject(PoolsEnum.EXPLOSION);
 		explosion.transform.position = transform.position;
 		explosion.transform.rotation = transform.rotation;
 		explosion.SetActive(true);

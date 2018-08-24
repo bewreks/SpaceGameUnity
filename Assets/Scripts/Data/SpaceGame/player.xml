@@ -3,6 +3,6 @@
   <PlayerModel>
     <id>1</id>
     <name>Test</name>
-    <money>100000</money>
+    <money>0</money>
   </PlayerModel>
 </ArrayOfPlayerModel>

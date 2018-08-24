@@ -22,10 +22,10 @@ public class Shooter : MonoBehaviour
 		_shootRate = PlayerController.Instance.GetPart(_type).Power;
 		var transformPosition = transform.position;
 		transformPosition.z = -0.5f;
-		var bullet = BulletPool.current.GetObject();
-		bullet.transform.position = transformPosition;
-		bullet.transform.rotation = transform.rotation;
-		bullet.SetActive(true);
+		var result = PoolManager.GetObject(PoolsEnum.BULLET);
+		result.transform.position = transformPosition;
+		result.transform.rotation = transform.rotation;
+		result.SetActive(true);
 		yield return new WaitForSeconds(1 / _shootRate);
 		StartCoroutine(Shoot());
 	}

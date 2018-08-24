@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 114684999857639342}
   - component: {fileID: 114665778437315468}
   - component: {fileID: 114220180152580908}
+  - component: {fileID: 114651911856147544}
   m_Layer: 0
   m_Name: ItemMission
   m_TagString: Untagged
@@ -195,6 +196,17 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "\u0423\u0432\u0435\u043B\u0438\u0447\u0435\u043D\u0438\u0435 \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u0440\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u0438
     \u043D\u0430 1"
+--- !u!114 &114651911856147544
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1790698461111628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 142b154d505015148abdab0e228a0325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114665778437315468
 MonoBehaviour:
   m_ObjectHideFlags: 1

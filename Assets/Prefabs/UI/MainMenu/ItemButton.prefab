@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 114157915415967072}
   - component: {fileID: 114568293429783302}
   - component: {fileID: 114941816092664088}
+  - component: {fileID: 114848369354353480}
   m_Layer: 0
   m_Name: ItemButton
   m_TagString: Untagged
@@ -260,6 +261,17 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "+ \u0421\u043A\u043E\u0440\u043E\u0441\u0442\u0440\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C"
+--- !u!114 &114848369354353480
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1633135711943158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 142b154d505015148abdab0e228a0325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114941816092664088
 MonoBehaviour:
   m_ObjectHideFlags: 1
